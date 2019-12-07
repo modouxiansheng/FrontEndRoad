@@ -12,5 +12,17 @@ module.exports = {
     mode: 'development',
     plugins:[
         htmlplugin
-    ]
+    ],
+    module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader'
+            }
+          }
+        ]
+      }
+    
 }
